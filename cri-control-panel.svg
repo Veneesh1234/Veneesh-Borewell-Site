@@ -1,0 +1,37 @@
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Panel background -->
+  <rect width="300" height="300" fill="#f5f5f5"/>
+  
+  <!-- Main panel body -->
+  <rect x="30" y="20" width="240" height="260" fill="#2c3e50" rx="10"/>
+  
+  <!-- Panel border -->
+  <rect x="30" y="20" width="240" height="260" fill="none" stroke="#1a252f" stroke-width="2" rx="10"/>
+  
+  <!-- Title area -->
+  <rect x="30" y="20" width="240" height="50" fill="#1e88e5" rx="10"/>
+  <text x="150" y="55" font-family="Arial" font-size="18" font-weight="bold" fill="white" text-anchor="middle">C.R.I Control Panel</text>
+  
+  <!-- Digital Display -->
+  <rect x="50" y="90" width="200" height="50" fill="#1a1a1a" stroke="#888" stroke-width="2" rx="5"/>
+  <text x="150" y="125" font-family="Arial" font-size="24" font-weight="bold" fill="#00ff00" text-anchor="middle">220V AC</text>
+  
+  <!-- Circuit Breaker -->
+  <g>
+    <text x="70" y="165" font-family="Arial" font-size="12" fill="white">Circuit Breaker</text>
+    <rect x="50" y="175" width="40" height="60" fill="#444" stroke="#888" stroke-width="1" rx="3"/>
+    <circle cx="70" cy="195" r="8" fill="#ff6b6b"/>
+    <circle cx="70" cy="225" r="8" fill="#4ecdc4"/>
+  </g>
+  
+  <!-- Safety Switch -->
+  <g>
+    <text x="200" y="165" font-family="Arial" font-size="12" fill="white">Safety Switch</text>
+    <rect x="180" y="175" width="40" height="60" fill="#444" stroke="#888" stroke-width="1" rx="3"/>
+    <rect x="190" y="190" width="20" height="10" fill="#ff9800"/>
+  </g>
+  
+  <!-- Features list -->
+  <text x="50" y="260" font-family="Arial" font-size="11" fill="#ccc">✓ Digital Display</text>
+  <text x="50" y="275" font-family="Arial" font-size="11" fill="#ccc">✓ Circuit Protection</text>
+</svg>
