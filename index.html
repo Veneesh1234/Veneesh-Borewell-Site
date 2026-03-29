@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta name="google-site-verification" content="MYscSdYw4EYEfwpbKC0r_M8zDo5VMp268U9rygBlpmU" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Veneesh Borewells - Reliable Borewell Solutions. Professional borewell drilling, motor sales and services in Tada.">
@@ -21,11 +20,8 @@
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#motors" class="nav-link">Motor Sales</a>
                 <a href="#control-panels" class="nav-link">Control Panels</a>
-                <a href="#payment" class="nav-link">Payment</a>
+                <a href="#ai-security" class="nav-link">AI Security</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <button class="cart-btn" onclick="openCart()">
-                    🛒 <span class="cart-count" id="cartCount">0</span>
-                </button>
             </nav>
         </div>
     </header>
@@ -158,21 +154,21 @@
                     <h3 class="motor-name">C.R.I Pumps</h3>
                     <p class="motor-specs">3 HP - 10 HP Range</p>
                     <p class="motor-description">Reliable and energy-efficient motors for residential and commercial use.</p>
-                    <button class="btn-buy" onclick="addToCart('C.R.I Pumps', 30000)">Buy Now</button>
+                    <button class="btn-buy" onclick="openBuyDialog('C.R.I Pumps')">Request Quote</button>
                 </div>
                 <div class="motor-card">
                     <div class="motor-icon">⚡</div>
                     <h3 class="motor-name">Texmo Taro Pumps</h3>
                     <p class="motor-specs">5 HP - 15 HP Range</p>
                     <p class="motor-description">Durable submersible motors designed for deep borewell applications.</p>
-                    <button class="btn-buy" onclick="addToCart('Texmo Taro Pumps', 28000)">Buy Now</button>
+                    <button class="btn-buy" onclick="openBuyDialog('Texmo Taro Pumps')">Request Quote</button>
                 </div>
                 <div class="motor-card">
                     <div class="motor-icon">💪</div>
                     <h3 class="motor-name">Assembly Pumps</h3>
                     <p class="motor-specs">2 HP - 12 HP Range</p>
                     <p class="motor-description">High-performance pumps with excellent water lifting capacity.</p>
-                    <button class="btn-buy" onclick="addToCart('Assembly Pumps', 28000)">Buy Now</button>
+                    <button class="btn-buy" onclick="openBuyDialog('Assembly Pumps')">Request Quote</button>
                 </div>
             </div>
         </div>
@@ -195,7 +191,7 @@
                     <h3 class="panel-name">C.R.I Control Panel</h3>
                     <p class="panel-price">₹3,500</p>
                     <p class="panel-description">Advanced control panel with digital display, circuit breaker, and safety features for submersible pumps.</p>
-                    <button class="btn-buy" onclick="addToCart('C.R.I Control Panel', 4200)">Buy Now</button>
+                    <button class="btn-buy" onclick="openControlPanelDialog('C.R.I Control Panel')">Request Quote</button>
                 </div>
                 <div class="control-panel-card">
                     <div class="control-panel-image">
@@ -208,7 +204,7 @@
                     <h3 class="panel-name">TEXMO Control Panel</h3>
                     <p class="panel-price">₹3,800</p>
                     <p class="panel-description">Reliable control panel with analog meters, selector switches, and robust protection for borewell pumps.</p>
-                    <button class="btn-buy" onclick="addToCart('TEXMO Control Panel', 4500)">Buy Now</button>
+                    <button class="btn-buy" onclick="openControlPanelDialog('TEXMO Control Panel')">Request Quote</button>
                 </div>
             </div>
         </div>
@@ -238,66 +234,26 @@
         </div>
     </section>
 
-    <!-- Payment Methods Section -->
-    <section id="payment" class="payment-section">
+    <!-- AI Fraud Detection Section -->
+    <section id="ai-security" class="ai-security-section">
         <div class="container">
-            <h2 class="section-title">Payment Methods</h2>
-            <div class="payment-content-wrapper">
-                <h3 class="payment-subtitle">Secure Payment Options</h3>
-                <p class="payment-description">Choose your preferred payment method to complete your transaction</p>
-                
-                <div class="payment-methods-grid">
-                    <!-- UPI Payment Method -->
-                    <div class="payment-method-card">
-                        <div class="payment-icon">📱</div>
-                        <h4>Direct UPI Payment</h4>
-                        <p class="method-description">Copy UPI ID and pay from any UPI app</p>
-                        
-                        <div class="upi-details">
-                            <div class="upi-id-display">
-                                <p class="upi-id-label">UPI ID</p>
-                                <p class="upi-id-value">vanishsaidram3763@oksbi</p>
-                            </div>
-                            <button class="btn-copy-upi" onclick="copyToClipboard('vanishsaidram3763@oksbi')">Copy UPI ID</button>
-                        </div>
-                    </div>
-
-                    <!-- QR Code Payment Method -->
-                    <div class="payment-method-card">
-                        <div class="payment-icon">🔲</div>
-                        <h4>Scan QR Code</h4>
-                        <p class="method-description">Scan with any UPI app to pay instantly</p>
-                        
-                        <div class="qr-code-display">
-                            <img src="upi-qr-code.png.jpeg" alt="UPI QR Code" class="qr-code-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                            <div class="qr-placeholder" style="display:none;">
-                                <p>📱 QR Code Image</p>
-                                <p style="font-size: 0.85rem; color: #999;">Upload upi-qr-code.png</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- WhatsApp Payment Request -->
-                    <div class="payment-method-card">
-                        <div class="payment-icon">💬</div>
-                        <h4>WhatsApp Payment</h4>
-                        <p class="method-description">Send payment request via WhatsApp</p>
-                        
-                        <div class="whatsapp-action">
-                            <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Contact us directly for payment assistance</p>
-                            <a href="https://wa.me/9550443003?text=I%20would%20like%20to%20inquire%20about%20payment%20options" target="_blank" class="btn-whatsapp">Chat on WhatsApp</a>
-                        </div>
-                    </div>
+            <h2 class="section-title">AI Fraud Detection & Trust Layer</h2>
+            <p class="section-subtitle">Machine learning-inspired screening helps us filter suspicious requests and protect genuine customers.</p>
+            <div class="ai-security-grid">
+                <div class="ai-security-card">
+                    <div class="ai-icon">🧠</div>
+                    <h3>Smart Risk Scoring</h3>
+                    <p>Every inquiry is evaluated using multiple behavioral signals and anomaly scoring before submission.</p>
                 </div>
-
-                <div class="payment-info-box">
-                    <h4>💡 Secure & Easy Payment</h4>
-                    <ul class="payment-benefits">
-                        <li>✓ Instant payment confirmation</li>
-                        <li>✓ Multiple UPI apps supported</li>
-                        <li>✓ 100% secure transactions</li>
-                        <li>✓ 24/7 payment availability</li>
-                    </ul>
+                <div class="ai-security-card">
+                    <div class="ai-icon">🛡️</div>
+                    <h3>Bot & Spam Protection</h3>
+                    <p>Hidden trap fields and pattern detection block automated spam, fake identities, and abusive requests.</p>
+                </div>
+                <div class="ai-security-card">
+                    <div class="ai-icon">📊</div>
+                    <h3>Adaptive Learning</h3>
+                    <p>The model updates local behavior baselines to better detect unusual activity over time.</p>
                 </div>
             </div>
         </div>
@@ -311,10 +267,12 @@
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
                     <p>Reach out to us for any queries or to book our services.</p>
+                    <p class="service-coverage"><strong>Tamilnadu</strong> (Arambakkam - Chengalpattu), <strong>Andhra Pradesh</strong> (Tada - Vijayawada, Chittoor, Kadapa)</p>
+                    <p class="admin-order-note"><strong>Administrator & Order Desk:</strong> 9550443003 (All orders are received on this number)</p>
                     <div class="phone-numbers">
                         <a href="tel:+919550443003" class="phone-link">
                             <span class="phone-icon">📞</span>
-                            <span>9550443003</span>
+                            <span>9550443003 (Administrator)</span>
                         </a>
                         <a href="tel:+918639558411" class="phone-link">
                             <span class="phone-icon">📞</span>
@@ -344,7 +302,7 @@
                 </div>
                 <div class="footer-section">
                     <h3>Contact</h3>
-                    <p>9550443003<br>8639558411<br>9494751475</p>
+                    <p><strong>Administrator / Orders:</strong> 9550443003<br>8639558411<br>9494751475</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -359,6 +317,7 @@
             <span class="close" onclick="closeAppointmentDialog()">&times;</span>
             <h2>Book Appointment</h2>
             <form id="appointmentForm" onsubmit="submitAppointment(event)">
+                <input type="text" id="appointmentWebsite" name="appointmentWebsite" class="honeypot" autocomplete="off" tabindex="-1" aria-hidden="true">
                 <div class="form-group">
                     <label for="customerName">Customer Name *</label>
                     <input type="text" id="customerName" name="customerName" required>
@@ -379,6 +338,7 @@
                     <button type="button" class="btn-cancel" onclick="closeAppointmentDialog()">Cancel</button>
                     <button type="submit" class="btn-submit">Send via WhatsApp</button>
                 </div>
+                <p id="appointmentRiskStatus" class="risk-status" aria-live="polite"></p>
             </form>
         </div>
     </div>
@@ -387,8 +347,9 @@
     <div id="buyModal" class="modal">
         <div class="modal-content modal-compact">
             <span class="close" onclick="closeBuyDialog()">&times;</span>
-            <h2>Quick Purchase</h2>
+            <h2>Quick Inquiry</h2>
             <form id="buyForm" onsubmit="submitBuyInquiry(event)">
+                <input type="text" id="buyWebsite" name="buyWebsite" class="honeypot" autocomplete="off" tabindex="-1" aria-hidden="true">
                 <div class="form-group">
                     <label for="buyCustomerName">Name *</label>
                     <input type="text" id="buyCustomerName" name="buyCustomerName" placeholder="Your name" required>
@@ -408,75 +369,15 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="buyPurpose">I want to: *</label>
-                    <select id="buyPurpose" name="buyPurpose" onchange="togglePaymentFields()" required>
-                        <option value="quotation">Get a Quotation</option>
-                        <option value="payment">Pay Now</option>
-                    </select>
-                </div>
-                <div id="paymentFieldsGroup" style="display: none;">
-                    <div class="form-group">
-                        <label for="buyAmount">Amount (₹) *</label>
-                        <input type="number" id="buyAmount" name="buyAmount" placeholder="Enter amount" min="1">
-                    </div>
-                    <div class="payment-options">
-                        <label style="font-size: 0.9rem; margin-bottom: 8px; display: block;">Payment Method:</label>
-                        <div class="payment-method-option">
-                            <input type="radio" id="upiOption" name="paymentMethod" value="upi" checked>
-                            <label for="upiOption" style="margin: 0;">📱 UPI</label>
-                        </div>
-                        <div class="payment-method-option">
-                            <input type="radio" id="whatsappOption" name="paymentMethod" value="whatsapp">
-                            <label for="whatsappOption" style="margin: 0;">💬 WhatsApp</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group" id="addressGroup">
                     <label for="buyCustomerAddress">Address *</label>
                     <textarea id="buyCustomerAddress" name="buyCustomerAddress" rows="2" placeholder="Your address" required></textarea>
                 </div>
                 <div class="form-actions">
                     <button type="button" class="btn-cancel" onclick="closeBuyDialog()">Close</button>
-                    <button type="submit" class="btn-submit" id="buySubmitBtn">Send via WhatsApp</button>
+                    <button type="submit" class="btn-submit" id="buySubmitBtn">Send Inquiry</button>
                 </div>
+                <p id="buyRiskStatus" class="risk-status" aria-live="polite"></p>
             </form>
-        </div>
-    </div>
-
-    <!-- Shopping Cart Modal -->
-    <div id="cartModal" class="modal">
-        <div class="modal-content cart-modal-content">
-            <span class="close" onclick="closeCart()">&times;</span>
-            <h2>🛒 Shopping Cart</h2>
-            <div id="cartItems" class="cart-items-container">
-                <p class="empty-cart">Your cart is empty</p>
-            </div>
-            <div id="cartSummary" class="cart-summary" style="display: none;">
-                <div class="summary-row">
-                    <span>Subtotal:</span>
-                    <span id="subtotal">₹0</span>
-                </div>
-                <div class="summary-row">
-                    <span>Delivery/Installation:</span>
-                    <span id="delivery">₹500</span>
-                </div>
-                <div class="summary-row total">
-                    <span>Total:</span>
-                    <span id="total">₹0</span>
-                </div>
-                <div class="form-group">
-                    <label for="cartCustomerName">Name *</label>
-                    <input type="text" id="cartCustomerName" placeholder="Your name" required>
-                </div>
-                <div class="form-group">
-                    <label for="cartCustomerPhone">Phone *</label>
-                    <input type="tel" id="cartCustomerPhone" placeholder="10-digit number" required>
-                </div>
-                <div class="form-actions">
-                    <button type="button" class="btn-cancel" onclick="closeCart()">Continue Shopping</button>
-                    <button type="button" class="btn-submit" onclick="checkoutCart()">Proceed to Payment</button>
-                </div>
-            </div>
         </div>
     </div>
 
